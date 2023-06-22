@@ -1,0 +1,14 @@
+# .clangd: Clangd configuration.
+# Copyright © 2023  Savio S. Machado <sav@loophole.cc>
+
+CompileFlags:
+Add: [-std=c++20]
+
+# If:
+#   PathMatch: .*\.hpp
+
+CompileFlags:
+  Add: -Wno-unused-function
+
+Diagnosticswithatypo:
+    Suppress: [-Wunused-macros -Wunused-member-functions -Wunused-template]
