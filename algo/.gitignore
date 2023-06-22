@@ -1,0 +1,6 @@
+a.out
+*~
+*.log
+*.out
+target
+target/*
