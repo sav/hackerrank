@@ -25,9 +25,18 @@ fn main() {
     let stdin = io::stdin();
     let mut stdin_iterator = stdin.lock().lines();
 
-    let _candles_count = stdin_iterator.next().unwrap().unwrap().trim().parse::<u64>().unwrap();
+    let _candles_count = stdin_iterator
+        .next()
+        .unwrap()
+        .unwrap()
+        .trim()
+        .parse::<u64>()
+        .unwrap();
 
-    let candles: Vec<u64> = stdin_iterator.next().unwrap().unwrap()
+    let candles: Vec<u64> = stdin_iterator
+        .next()
+        .unwrap()
+        .unwrap()
         .trim_end()
         .split(' ')
         .map(|s| s.to_string().parse::<u64>().unwrap())
@@ -37,4 +46,3 @@ fn main() {
 
     println!("{}", result);
 }
-
