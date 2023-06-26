@@ -57,7 +57,6 @@ func main() {
 
 	scoreA, scoreB := compareTriplets(a, b)
 	fmt.Printf("%v %v\n", scoreA, scoreB)
-
 }
 
 func readLine(reader *bufio.Reader) string {
