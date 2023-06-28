@@ -10,28 +10,25 @@ fn bonetrousle(k: u128, b: u128, n: u128) {
     }
 
     let mut sum: u128 = min;
-    let pos: u128 = 1;
-    let _ini: u128 = 1;
-
-    let mut r: Vec<u128> = (pos..pos + b).collect();
-    let mut m: u128 = b - 1;
+    let mut res: Vec<u128> = (1..b + 1).collect();
+    let mut cur: u128 = b - 1; // current block
 
     loop {
-        let c = (n - sum) / (k - (pos + b - 1) + 1);
+        let c = (n - sum) / (k - b + 1);
         if c > 0 && sum < n {
-            sum -= r[m as usize];
-            sum += k - (b - m - 1);
-            r[m as usize] = k - (b - m - 1);
-            m -= 1;
+            sum -= res[cur as usize];
+            sum += k - (b - cur - 1);
+            res[cur as usize] = k - (b - cur - 1);
+            cur -= 1;
         } else {
             break;
         }
     }
 
-    r[m as usize] += n - sum;
+    res[cur as usize] += n - sum;
 
     for p in 0..b {
-        print!("{}", r[p as usize]);
+        print!("{}", res[p as usize]);
         if p != b - 1 {
             print!(" ");
         }
