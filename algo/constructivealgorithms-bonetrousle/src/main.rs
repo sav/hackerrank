@@ -42,8 +42,6 @@ fn main() {
 
     let t = input.next().unwrap().unwrap().trim().parse::<u8>().unwrap();
 
-    assert_eq!(u128::BITS, 128);
-
     for _ in 0..t {
         let v: Vec<u128> = input
             .next()
